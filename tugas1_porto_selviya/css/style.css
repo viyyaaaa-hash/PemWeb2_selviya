@@ -1,0 +1,200 @@
+/* ===== Root Variables (LILAC THEME) ===== */
+:root {
+  --primary: #c084fc; /* lilac utama */
+  --secondary: #e9d5ff; /* lilac soft */
+  --accent: #a855f7; /* ungu elegan */
+  --dark: #3b0764; /* ungu gelap */
+  --light-bg: #faf5ff; /* background soft */
+  --card-shadow: 0 6px 25px rgba(168, 85, 247, 0.15);
+  --transition: all 0.3s ease;
+}
+
+/* ===== Global ===== */
+body {
+  font-family: "Nunito", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  color: #3b0764;
+}
+
+/* ===== Section Titles ===== */
+.section-title {
+  font-weight: 700;
+  color: var(--dark);
+  position: relative;
+  padding-bottom: 10px;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #c084fc, #a855f7);
+  border-radius: 2px;
+}
+
+/* ===== HEADER CAROUSEL ===== */
+.carousel-bg {
+  position: relative;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Background gambar */
+.carousel-bg-1 {
+  background-image: url("../img/download.jpg");
+}
+.carousel-bg-2 {
+  background-image: url("../img/gambar.jpg");
+}
+.carousel-bg-3 {
+  background-image: url("../img/pict3.jpg");
+}
+
+/* 🌸 Overlay LILAC GRADIENT */
+.carousel-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(192, 132, 252, 0.7),
+    rgba(168, 85, 247, 0.7)
+  );
+}
+
+/* Text */
+.carousel-caption-custom {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 4px 20px rgba(88, 28, 135, 0.5);
+}
+.carousel-caption-custom h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+}
+
+/* ===== NAVBAR ===== */
+#mainNav {
+  background: linear-gradient(90deg, #6b21a8, #9333ea);
+  box-shadow: 0 4px 20px rgba(84, 19, 83, 0.683);
+}
+#mainNav .nav-link {
+  font-weight: 600;
+  color: #f3e8ff !important;
+  transition: var(--transition);
+}
+#mainNav .nav-link:hover,
+#mainNav .nav-link.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar-card {
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: var(--card-shadow);
+}
+.sidebar-card .list-group-item:hover {
+  background: #f3e8ff;
+  color: var(--accent);
+}
+
+/* ===== CARDS ===== */
+.card {
+  border-radius: 14px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.25);
+}
+
+/* ===== FOOTER ===== */
+.footer-section {
+  background: linear-gradient(135deg, #6e5e89, #6d28d9);
+}
+.footer-section a:hover {
+  color: #fff !important;
+  transform: scale(1.2);
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  background: linear-gradient(135deg, #c084fc, #a855f7);
+  color: white;
+  border: none;
+}
+.btn:hover {
+  background: linear-gradient(135deg, #a855f7, #9333ea);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .carousel-bg {
+    height: 260px;
+  }
+  .carousel-caption-custom h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===== FORCE OVERRIDE CAROUSEL ===== */
+
+.carousel-bg-1,
+.carousel-bg-2,
+.carousel-bg-3 {
+  background: none !important;
+}
+
+/* paksa gambar muncul */
+.carousel-bg-1 {
+  background-image: url("../img/download.jpg") !important;
+}
+.carousel-bg-2 {
+  background-image: url("../img/gambar.jpg") !important;
+}
+.carousel-bg-3 {
+  background-image: url("../img/pict3.jpg") !important;
+}
+
+/* paksa overlay lilac */
+.carousel-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(192, 132, 252, 0.7),
+    rgba(168, 85, 247, 0.7)
+  ) !important;
+}
+.sosmed-icon-wrapper {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+    .sosmed-icon-wrapper {
+        height: 90px;
+    }
+
+    .card h5 {
+        font-size: 1.1rem;
+    }
+}
