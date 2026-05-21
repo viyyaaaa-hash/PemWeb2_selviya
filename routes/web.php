@@ -19,5 +19,4 @@ Route::get('/contact', function () {
     return view('layouts/about');
 });
 
-Route::get('/staff',[StaffController::class, 'index']
-);
+Route::resource('/staff', StaffController::class);

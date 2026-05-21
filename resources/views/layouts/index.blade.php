@@ -3,10 +3,10 @@
   <head>
     <title>My Laravel</title>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" 
+    <link rel="stylesheet"
          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   </head>
-  <body>  
+  <body>
   <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
@@ -21,7 +21,17 @@
     <br/>
 	<div class="row">
 		<div class="col-md-8">
-      @yield('content')     
+        @if($message = Session::get('success'))
+            <div class="alert alert-success">
+            <p>{{ $message }}</p>
+            </div>
+            @endif
+            @if($message = Session::get('error'))
+            <div class="alert alert-danger">
+            <p>{{ $message }}</p>
+            </div>
+            @endif
+        @yield('content')
 		</div>
 		<div class="col-md-4">
       @include('layouts.sidebar')
